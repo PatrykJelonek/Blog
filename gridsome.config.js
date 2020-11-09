@@ -4,22 +4,38 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+const path = require('path')
+
+function addStyleResource (rule) {
+  rule.use('style-resource')
+    .loader('style-resources-loader')
+    .options({
+      patterns: [
+        path.resolve(__dirname, './src/assets/scss/*.scss'),
+      ],
+    })
+}
+
 module.exports = {
+  chainWebpack (config) {
+    // Load variables for all vue-files
+    const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
+
+    // or if you use scss
+    types.forEach(type => {
+      addStyleResource(config.module.rule('scss').oneOf(type))
+    })
+  },
   siteName: 'Patryk Jelonek - Blog',
   siteDescription: 'Blog o programowaniu!',
   plugins: [
     {
-      use: '@gridsome/source-filesystem',
+      use: '@gridsome/vue-remark',
       options: {
-        path: './content/blog/**/*.md',
-        typeName: 'BlogPost',
-        remark: {
-          plugins: [
-            ['@gridsome/remark-prismjs', {
-              showLineNumbers: true,
-            }]
-          ]
-        }
+        typeName: 'Category', // Required
+        baseDir: './content/categories', // Where .md files are located
+        pathPrefix: '/categories', // Add route prefix. Optional
+        template: './src/templates/Category.vue' // Optional
       }
     },
     {
@@ -32,14 +48,23 @@ module.exports = {
       }
     },
     {
-      use: '@gridsome/vue-remark',
+      use: '@gridsome/source-filesystem',
       options: {
-        typeName: 'Documentation', // Required
-        baseDir: './content/docs', // Where .md files are located
-        pathPrefix: '/docs', // Add route prefix. Optional
-        template: './src/templates/Documentation.vue', // Optional
+        path: './content/blog/**/*.md',
+        typeName: 'BlogPost',
+        remark: {
+          plugins: [
+            [
+              '@gridsome/remark-prismjs', 
+              {
+              showLineNumbers: true,
+              }
+            ]
+          ]
+        },
         refs: {
-          tags: 'Tag'
+          tags: 'Tag',
+          categories: 'Category',
         }
       }
     },
@@ -50,6 +75,7 @@ module.exports = {
     }
   },
   templates: {
-    BlogPost: '/blog/:title'
-  }
+    BlogPost: '/blog/:title',
+  },
+  
 }

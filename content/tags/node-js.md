@@ -1,5 +1,5 @@
 ---
 id: node-js
-name: Node JS
+name: Node.js
 description: Backend Javascript Framework
 ---

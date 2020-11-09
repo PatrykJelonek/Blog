@@ -1,5 +1,5 @@
 ---
 id: vue
-name: Vue
+name: Vue.js
 description: Modern JavaScript Framework
 ---

@@ -1,45 +1,73 @@
-const c1 = () => import(/* webpackChunkName: "page--src--templates--tag-vue" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/src/templates/Tag.vue")
-const c2 = () => import(/* webpackChunkName: "page--src--templates--documentation-vue" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/src/templates/Documentation.vue")
-const c3 = () => import(/* webpackChunkName: "page--src--templates--blog-post-vue" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/src/templates/BlogPost.vue")
-const c4 = () => import(/* webpackChunkName: "page--src--pages--test-vue" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/src/pages/Test.vue")
-const c5 = () => import(/* webpackChunkName: "page--src--pages--about-vue" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/src/pages/About.vue")
-const c6 = () => import(/* webpackChunkName: "page--node-modules--gridsome--app--pages--404-vue" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/node_modules/gridsome/app/pages/404.vue")
-const c7 = () => import(/* webpackChunkName: "page--src--pages--index-vue" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/src/pages/Index.vue")
+const c1 = () => import(/* webpackChunkName: "page--src-templates-tag-vue" */ "C:\\Users\\Patryk\\Desktop\\Blog\\src\\templates\\Tag.vue")
+const c2 = () => import(/* webpackChunkName: "page--src-templates-category-vue" */ "C:\\Users\\Patryk\\Desktop\\Blog\\src\\templates\\Category.vue")
+const c3 = () => import(/* webpackChunkName: "page--src-templates-blog-post-vue" */ "C:\\Users\\Patryk\\Desktop\\Blog\\src\\templates\\BlogPost.vue")
+const c4 = () => import(/* webpackChunkName: "page--src-pages-test-vue" */ "C:\\Users\\Patryk\\Desktop\\Blog\\src\\pages\\Test.vue")
+const c5 = () => import(/* webpackChunkName: "page--src-pages-about-vue" */ "C:\\Users\\Patryk\\Desktop\\Blog\\src\\pages\\About.vue")
+const c6 = () => import(/* webpackChunkName: "page--node-modules-gridsome-app-pages-404-vue" */ "C:\\Users\\Patryk\\Desktop\\Blog\\node_modules\\gridsome\\app\\pages\\404.vue")
+const c7 = () => import(/* webpackChunkName: "page--src-pages-index-vue" */ "C:\\Users\\Patryk\\Desktop\\Blog\\src\\pages\\Index.vue")
 
 export default [
   {
     path: "/tags/vue/",
     component: c1,
     meta: {
-      $vueRemark: () => import(/* webpackChunkName: "vue-remark--content--tags--vue-md" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/content/tags/vue.md")
+      $vueRemark: () => import(/* webpackChunkName: "vue-remark--content-tags-vue-md" */ "C:\\Users\\Patryk\\Desktop\\Blog\\content\\tags\\vue.md")
+    }
+  },
+  {
+    path: "/tags/php/",
+    component: c1,
+    meta: {
+      $vueRemark: () => import(/* webpackChunkName: "vue-remark--content-tags-php-md" */ "C:\\Users\\Patryk\\Desktop\\Blog\\content\\tags\\php.md")
     }
   },
   {
     path: "/tags/node-js/",
     component: c1,
     meta: {
-      $vueRemark: () => import(/* webpackChunkName: "vue-remark--content--tags--node-js-md" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/content/tags/node-js.md")
+      $vueRemark: () => import(/* webpackChunkName: "vue-remark--content-tags-node-js-md" */ "C:\\Users\\Patryk\\Desktop\\Blog\\content\\tags\\node-js.md")
     }
   },
   {
-    path: "/docs/trzeci-doc/",
-    component: c2,
+    path: "/tags/my-sql/",
+    component: c1,
     meta: {
-      $vueRemark: () => import(/* webpackChunkName: "vue-remark--content--docs--trzeci-doc-md" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/content/docs/trzeci-doc.md")
+      $vueRemark: () => import(/* webpackChunkName: "vue-remark--content-tags-my-sql-md" */ "C:\\Users\\Patryk\\Desktop\\Blog\\content\\tags\\my-sql.md")
     }
   },
   {
-    path: "/docs/doc-pierwszy/",
-    component: c2,
+    path: "/tags/laravel/",
+    component: c1,
     meta: {
-      $vueRemark: () => import(/* webpackChunkName: "vue-remark--content--docs--doc-pierwszy-md" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/content/docs/doc-pierwszy.md")
+      $vueRemark: () => import(/* webpackChunkName: "vue-remark--content-tags-laravel-md" */ "C:\\Users\\Patryk\\Desktop\\Blog\\content\\tags\\laravel.md")
     }
   },
   {
-    path: "/docs/drugi-doc/",
+    path: "/tags/javascript/",
+    component: c1,
+    meta: {
+      $vueRemark: () => import(/* webpackChunkName: "vue-remark--content-tags-javascript-md" */ "C:\\Users\\Patryk\\Desktop\\Blog\\content\\tags\\javascript.md")
+    }
+  },
+  {
+    path: "/categories/frontend/",
     component: c2,
     meta: {
-      $vueRemark: () => import(/* webpackChunkName: "vue-remark--content--docs--drugi-doc-md" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/content/docs/drugi-doc.md")
+      $vueRemark: () => import(/* webpackChunkName: "vue-remark--content-categories-frontend-md" */ "C:\\Users\\Patryk\\Desktop\\Blog\\content\\categories\\frontend.md")
+    }
+  },
+  {
+    path: "/categories/database/",
+    component: c2,
+    meta: {
+      $vueRemark: () => import(/* webpackChunkName: "vue-remark--content-categories-database-md" */ "C:\\Users\\Patryk\\Desktop\\Blog\\content\\categories\\database.md")
+    }
+  },
+  {
+    path: "/categories/backend/",
+    component: c2,
+    meta: {
+      $vueRemark: () => import(/* webpackChunkName: "vue-remark--content-categories-backend-md" */ "C:\\Users\\Patryk\\Desktop\\Blog\\content\\categories\\backend.md")
     }
   },
   {

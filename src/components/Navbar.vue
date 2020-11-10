@@ -1,6 +1,8 @@
 <template>
     <nav class="nav">
-        <h1>Patryk Jelonek</h1>
+        <h1 class="nav__logo">
+          <g-link to="/">Patryk Jelonek</g-link>
+        </h1>
         <ul class="nav__items">
             <li class="nav__item">
                 <g-link class="nav__link" to="/">Strona Główna</g-link>
@@ -23,20 +25,38 @@ export default {
         justify-content: space-between;
         align-items: center;
 
-        &__items {
-            list-style-type: none;
-            display: flex;
-            justify-content: center;
-            align-content: center;
-        }
+      &__logo {
+        a {
+          text-decoration: none;
+          color: $headers-color;
 
-        &__item {
-            margin-right: 10px;
+          &:hover {
+            text-decoration: $primary-link underline;
+          }
         }
+      }
 
-        &__link {
-            text-decoration: none;
-            color: $primary-link;
+      &__items {
+          list-style-type: none;
+          display: flex;
+          justify-content: center;
+          align-content: center;
+      }
+
+      &__item {
+          margin-right: 10px;
+      }
+
+      &__link {
+        text-decoration: none;
+        color: $secondary-headers-color;
+        transition: color .3s;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 14px;
+
+        &:hover {
+          color: $primary-link;
         }
+      }
     }
 </style>

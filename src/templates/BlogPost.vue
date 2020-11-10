@@ -64,8 +64,10 @@ query ($id: ID!) {
 <script>
   export default {
     name: "BlogPost",
-    metaInfo: {
-      title: "Abc"
+    metaInfo() {
+      return {
+        title: this.$page.blogPost.title
+      }
     }
   }
 </script>
@@ -168,6 +170,19 @@ query ($id: ID!) {
          /deep/ h3:hover::before {
            opacity: 1;
          }
+
+         /deep/ ul {
+           list-style: none;
+         }
+
+         /deep/ ul li::before {
+          content: "\2022";  
+          color: $primary-link; 
+          font-weight: bold;
+          display: inline-block;
+          width: 1em;
+          margin-left: -2em;
+        }
       }
 
       &__comments {

@@ -3,6 +3,7 @@ title: Zarządzanie stanami przy pomocy Vuex'a
 date: 2020-11-11
 categories: [frontend]
 tags: [vue, vuex]
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et ultricies elit, ut fringilla libero. Maecenas iaculis pulvinar risus sed sollicitudin. 
 ---
 
 ### Czym jest Vuex

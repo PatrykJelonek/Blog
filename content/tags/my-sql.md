@@ -1,5 +1,5 @@
 ---
 id: my-sql
-name: My SQL
+name: MySQL
 description: Database Service
 ---

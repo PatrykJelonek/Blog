@@ -179,6 +179,24 @@ export default {
 
 .post {
   margin-bottom: 35px;
+  position: relative;
+
+  &::before {
+    content: "#";
+    color: $primary-link;
+    opacity: 0;
+    font-weight: bold;
+    margin-right: 8px;
+    transition: opacity .2s;
+    position: absolute;
+    font-size: 30px;
+    left: -25px;
+    top: 23px;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
 
   &__tag {
     border-radius: 3px;
@@ -216,6 +234,11 @@ export default {
     font-size: 30px;
     margin-bottom: 10px;
     margin-top: 0;
+    transition: color .3s;
+
+    &:hover {
+        text-decoration: underline $primary-link;
+    }
   }
 
   &__description {

@@ -2,3 +2,4 @@ node_modules
 .idea
 .cache
 src/.temp
+!node_modules/prismjs/themes/prism-theme.css

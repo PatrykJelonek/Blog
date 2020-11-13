@@ -12,5 +12,4 @@ description: Laravel jest jednym z najpopularniejszych framework'ów PHP. Wykorz
 * View - dostarcza widoki
 * Controller - zarządza aplikacją
 
-Do wygenerowania modelu służy polecenie  
-`laravel create model`
+Do wygenerowania modelu służy polecenie `<addr>` 

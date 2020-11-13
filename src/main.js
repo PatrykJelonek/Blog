@@ -3,7 +3,7 @@
 
 import DefaultLayout from '~/layouts/Default.vue'
 //import 'prismjs/themes/prism-theme.css'
-import 'prismjs/themes/prism-dark.css'
+import 'prismjs/themes/prism-theme.css'
 import VueDisqus from 'vue-disqus'
 
 export default function (Vue, { router, head, isClient }) {

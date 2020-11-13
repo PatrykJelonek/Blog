@@ -1,4 +1,0 @@
----
-id: frontend
-name: Frontend
----

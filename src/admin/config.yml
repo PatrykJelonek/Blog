@@ -31,6 +31,7 @@ collections:
         name: "tags"
         widget: "relation"
         collection: "tags"
+        multiple: true
         search_fields: ["name"]
         value_field: "id"
         display_fields: ["name"]

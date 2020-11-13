@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: PatrykJelonek/Blog
+  repo: PatrykJelonek/blog
 
 media_folder: "static/uploads"
 public_folder: "/uploads"

@@ -1,10 +1,10 @@
 const c1 = () => import(/* webpackChunkName: "page--src--templates--tag-vue" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/src/templates/Tag.vue")
 const c2 = () => import(/* webpackChunkName: "page--src--templates--category-vue" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/src/templates/Category.vue")
-const c3 = () => import(/* webpackChunkName: "page--src--templates--blog-post-vue" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/src/templates/BlogPost.vue")
-const c4 = () => import(/* webpackChunkName: "page--src--pages--test-vue" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/src/pages/Test.vue")
-const c5 = () => import(/* webpackChunkName: "page--src--pages--about-vue" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/src/pages/About.vue")
-const c6 = () => import(/* webpackChunkName: "page--node-modules--gridsome--app--pages--404-vue" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/node_modules/gridsome/app/pages/404.vue")
-const c7 = () => import(/* webpackChunkName: "page--src--pages--index-vue" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/src/pages/Index.vue")
+const c3 = () => import(/* webpackChunkName: "page--src--pages--test-vue" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/src/pages/Test.vue")
+const c4 = () => import(/* webpackChunkName: "page--src--pages--about-vue" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/src/pages/About.vue")
+const c5 = () => import(/* webpackChunkName: "page--node-modules--gridsome--app--pages--404-vue" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/node_modules/gridsome/app/pages/404.vue")
+const c6 = () => import(/* webpackChunkName: "page--src--pages--index-vue" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/src/pages/Index.vue")
+const c7 = () => import(/* webpackChunkName: "page--src--templates--blog-post-vue" */ "/Users/patryk/Desktop/Patryk/PersonalBlog/src/templates/BlogPost.vue")
 
 export default [
   {
@@ -78,30 +78,30 @@ export default [
     }
   },
   {
-    path: "/blog/:title/",
+    path: "/test/",
     component: c3
   },
   {
-    path: "/test/",
-    component: c4
-  },
-  {
     path: "/about/",
-    component: c5
+    component: c4
   },
   {
     name: "404",
     path: "/404/",
-    component: c6
+    component: c5
   },
   {
     name: "home",
     path: "/:page(\\d+)?/",
+    component: c6
+  },
+  {
+    path: "/:title/",
     component: c7
   },
   {
     name: "*",
     path: "*",
-    component: c6
+    component: c5
   }
 ]

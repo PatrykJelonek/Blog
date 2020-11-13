@@ -77,7 +77,7 @@ module.exports = {
     }
   },
   templates: {
-    BlogPost: '/blog/:title',
+    BlogPost: '/:title',
   },
   
 }

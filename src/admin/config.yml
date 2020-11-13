@@ -9,7 +9,7 @@ public_folder: "/uploads"
 collections:
   - name: "tags"
     label: "Tagi"
-    folder: "tags"
+    folder: "content/tags"
     create: true
     slug: "{{id}}"
     fields:
@@ -18,7 +18,7 @@ collections:
       - {label: "Opis", name: "description", widget: "string"}
   - name: "posts"
     label: "Posty"
-    folder: "blog"
+    folder: "content/blog"
     create: true
     slug: "{{slug}}"
     fields:

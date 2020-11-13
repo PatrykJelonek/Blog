@@ -6,6 +6,15 @@ media_folder: "static/uploads"
 public_folder: "/uploads"
 
 collections:
+  - name: "tags"
+    label: "Tagi"
+    folder: "tags"
+    create: true
+    slug: "{{id}}"
+    fields:
+      - {label: "Nazwa", name: "name", widget: "string"}
+      - {label: "ID", name: "id", widget: "string"}
+      - {label: "Opis", name: "description", widget: "string"}
   - name: "posts"
     label: "Posty"
     folder: "blog"
@@ -17,3 +26,11 @@ collections:
       - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Description", name: "description", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Tagi"
+        name: "tags"
+        widget: "relation"
+        collection: "tags"
+        search_fields: ["name"]
+        value_field: "id"
+        display_fields: ["name"]
+      

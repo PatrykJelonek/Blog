@@ -28,6 +28,8 @@ module.exports = {
   },
   siteName: 'Patryk Jelonek - Blog',
   siteDescription: 'Blog o programowaniu!',
+  siteUrl: 'https://patrykjelonek.github.io',
+  pathPrefix: '/blog',
   plugins: [
     {
       use: '@gridsome/vue-remark',

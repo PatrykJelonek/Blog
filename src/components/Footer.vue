@@ -54,6 +54,11 @@ name: "Footer"
     display: flex;
     align-items: flex-start;
     margin: 20px 0;
+    flex-wrap: wrap;
+
+    @media (max-width: $display-medium) {
+    margin: 35px 0;
+    }
 
     .menu {
       margin-right: 50px;

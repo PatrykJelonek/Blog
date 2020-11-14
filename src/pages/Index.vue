@@ -5,21 +5,26 @@
         <header class="posts__header">
           <h2 class="posts__title">Blog</h2>
         </header>
-        <article class="post" v-for="post in $page.posts.edges" :key="post.node.id">
-          <header class="post__header">
-              <span class="post__tag" v-for="tag in post.node.tags" :key="tag.id">
-                <g-link :to="tag.path">{{ tag.name }}</g-link>
-              </span>
-            <g-link class="post__link" :to="post.node.path">
-              <h3 class="post__title">{{ post.node.title }}</h3>
-            </g-link>
-          </header>
-          <p class="post__description">
-            {{ post.node.description }}
-          </p>
-        </article>
+        <g-link class="post__link" :to="post.node.path" v-for="post in $page.posts.edges" :key="post.node.id">
+          <article class="post" >
+            <header class="post__header">
+                <g-image v-if="post.node.thumbnail_src && post.node.thumbnail_alt" 
+                        class="post__thumbnail"
+                        :src="post.node.thumbnail_src" 
+                        :alt="post.node.thumbnail_alt"/>
+                <span class="post__tag" v-for="tag in post.node.tags" :key="tag.id">
+                  <g-link :to="tag.path">{{ tag.name }}</g-link>
+                </span>
+                <h3 class="post__title">{{ post.node.title }}</h3>
+            </header>
+            <p class="post__description">
+              {{ post.node.description }}
+            </p>
+          </article>
+        </g-link>
         <Pager class="pager" :info="$page.posts.pageInfo" linkClass="pager__link"/>
       </section>
+      
 
       <aside class="aside">
         <section class="aside__section">
@@ -63,6 +68,8 @@
           path
           date(format: "YYYY")
           description
+          thumbnail_src
+          thumbnail_alt
           tags {
             id
             name
@@ -120,22 +127,54 @@ export default {
 .blog_container {
   display: flex;
   justify-content: space-around;
+
+  @media (max-width: $display-medium) {
+    flex-direction: column;
+  }
 }
 
 .aside {
   max-width: 250px;
   width: 100%;
 
+  @media (max-width: $display-medium) {
+    display: flex;
+    align-items: flex-start;
+    border-radius: $border-radius;
+    max-width: 100%;
+    background: $tag-bg;
+    flex-direction: column;
+  }
+  
   &__section {
     margin-bottom: 25px;
     background: $tag-bg;
-    border-radius: 4px;
+    border-radius: $border-radius;
     padding: 0px 10px 10px 10px;
+
+    @media (max-width: $display-medium) {
+      background: none;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: $display-small) {
+       margin-bottom: 10px;
+    }
   }
 
    &__title {
     font-size: 35px;
     color: $headers-color;
+
+    @media (max-width: $display-medium) {
+      font-size: 1.5rem;
+      margin: 10px 0;
+    }
+
+    @media (max-width: $display-small) {
+      margin: 5px 0;
+      font-size: 1.5rem;
+    }
   }
 
   &__tags, &__categories {
@@ -172,34 +211,32 @@ export default {
   margin-right: 20px;
 
   &__title {
-    font-size: 35px;
+    font-size: 2.5rem;
     color: $headers-color;
+  }
+
+  @media (max-width: $display-medium) {
+    margin: 0;
   }
 }
 
 .post {
   margin-bottom: 35px;
   position: relative;
+  border-radius: $border-radius;
+  transition: background-color .3s;
+  padding: 10px;
 
-  &::before {
-    content: "#";
-    color: $primary-link;
-    opacity: 0;
-    font-weight: bold;
-    margin-right: 8px;
-    transition: opacity .2s;
-    position: absolute;
-    font-size: 30px;
-    left: -25px;
-    top: 23px;
+  &:hover {
+    background-color: $tag-bg;
   }
 
-  &:hover::before {
-    opacity: 1;
-  }
+  &:hover &__title {
+      text-decoration: underline $primary-link;
+    }
 
   &__tag {
-    border-radius: 3px;
+    border-radius: $border-radius;
     margin-right: 10px;
 
     a {
@@ -224,6 +261,13 @@ export default {
     }
   }
 
+  &__thumbnail {
+    height: 200px;
+    width: 100%;
+    border-radius: 3px;
+    object-fit: cover;
+  }
+
   &__link {
     text-decoration: none;
     color: none;
@@ -235,10 +279,7 @@ export default {
     margin-bottom: 10px;
     margin-top: 0;
     transition: color .3s;
-
-    &:hover {
-        text-decoration: underline $primary-link;
-    }
+    line-height: 1.3em;
   }
 
   &__description {

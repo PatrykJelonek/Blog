@@ -50,8 +50,9 @@ collections:
         value_field: "id"
         display_fields: ["name"]
       - label: "Featured Image"
-        name: "thumbnail"
+        name: "thumbnail_src"
         widget: "image"
+      - {label: "Featured Image Alt", name: "thumbnail_alt", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       

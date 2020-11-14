@@ -28,12 +28,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 body {
   margin:0;
   padding:0;
   line-height: 1.5;
   border-top: 4px solid #5a67d8;
+  font-size: $base-font-size;
 }
 
 .layout {
@@ -48,7 +49,6 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  height: 80px;
 }
 
 .nav__link {

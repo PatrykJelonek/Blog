@@ -2,6 +2,12 @@
   <Layout>
     <article class="article">
       <header>
+        <section v-if="$page.blogPost.thumbnail_src && $page.blogPost.thumbnail_alt" 
+                 class="article__thumbnail">
+          <g-image :src="$page.blogPost.thumbnail_src" 
+                   :alt="$page.blogPost.thumbnail_alt"
+                   class="article__thumbnail__img"/>
+        </section>
         <section class="article__metadata">
           <section class="article__tags">
             <span class="article__tag" v-for="tag in $page.blogPost.tags" :key="tag.id">
@@ -17,8 +23,6 @@
         <h2 class="article__title">{{ $page.blogPost.title }}</h2>
         <span class="article__date">Opublikowano: {{ $page.blogPost.date }} r.</span>
       </header>
-
-        <g-image v-if="$page.blogPost.thumbnail" :src="$page.blogPost.thumbnail" alt="alt"/>
         <section class="author">
           <div class="author__account">
             <g-image class="author__img" alt="Avatar" src="~/assets/img/me-avatar.jpg"/>
@@ -48,7 +52,8 @@ query ($id: ID!) {
     title
     content
     date(format: "DD.MM.YYYY")
-    thumbnail
+    thumbnail_src
+    thumbnail_alt
     tags {
       id
       name
@@ -78,6 +83,19 @@ query ($id: ID!) {
     .article {
       color: $text-color;
       margin-top: 55px;
+
+      &__thumbnail {
+        width: 100%;
+        overflow: hidden;
+        max-height: 300px;
+        border-radius: 3px;
+        margin-bottom: 65px;
+
+        &__img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
 
       &__title {
         color: $headers-color;
@@ -124,8 +142,6 @@ query ($id: ID!) {
           margin-right: 1px;
         }
       }
-
-      &__categories {}
 
       &__category {
         a {

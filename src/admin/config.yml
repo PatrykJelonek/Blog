@@ -49,9 +49,9 @@ collections:
         search_fields: ["name"]
         value_field: "id"
         display_fields: ["name"]
-        - label: "Featured Image"
-          name: "thumbnail"
-          widget: "image"
+      - label: "Featured Image"
+        name: "thumbnail"
+        widget: "image"
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       

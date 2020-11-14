@@ -18,7 +18,7 @@
         <span class="article__date">Opublikowano: {{ $page.blogPost.date }} r.</span>
       </header>
 
-        <g-image :src="$page.blogPost.thumbnail" alt="alt"/>
+        <g-image v-if="$page.blogPost.thumbnail" :src="$page.blogPost.thumbnail" alt="alt"/>
         <section class="author">
           <div class="author__account">
             <g-image class="author__img" alt="Avatar" src="~/assets/img/me-avatar.jpg"/>

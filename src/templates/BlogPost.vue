@@ -18,6 +18,7 @@
         <span class="article__date">Opublikowano: {{ $page.blogPost.date }} r.</span>
       </header>
 
+        <g-image src="{{ $page.blogPost.thumbnail }}" alt="alt"></g-image>
         <section class="author">
           <div class="author__account">
             <g-image class="author__img" alt="Avatar" src="~/assets/img/me-avatar.jpg"/>
@@ -47,6 +48,7 @@ query ($id: ID!) {
     title
     content
     date(format: "DD.MM.YYYY")
+    thumbnail
     tags {
       id
       name
